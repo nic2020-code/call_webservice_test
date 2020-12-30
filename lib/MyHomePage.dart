@@ -24,15 +24,15 @@ class _FormConnectState extends State<ConnectDevice>
     String objText =
         '[{"serial": "$_serial", "pincode": "$_pincode", "status": "$_status",}]';
     String objBody = '<?xml version="1.0" encoding="utf-8"?>' +
-        '<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-        '<soap12:Body>' +
+        '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
+        '<soap:Body>' +
         '<RegSerialNo xmlns="http://tempuri.org/">' +
         '<serial>$objText</serial>' +
 //         '<pincode>$objText</pincode>' +
 //         '<status>$objText</status>' +
         '</RegSerialNo>' +
-        '</soap12:Body>' +
-        '</soap12:Envelope>';
+        '</soap:Body>' +
+        '</soap:Envelope>';
 
     final response = await http.post(
         "http://cavn.vn:8020/WebServiceSeateach.asmx",
