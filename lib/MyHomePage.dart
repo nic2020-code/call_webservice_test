@@ -28,8 +28,8 @@ class _FormConnectState extends State<ConnectDevice>
         '<soap12:Body>' +
         '<RegSerialNo xmlns="http://tempuri.org/">' +
         '<serial>$objText</serial>' +
-        '<pincode>$objText</pincode>' +
-        '<status>$objText</status>' +
+//         '<pincode>$objText</pincode>' +
+//         '<status>$objText</status>' +
         '</RegSerialNo>' +
         '</soap12:Body>' +
         '</soap12:Envelope>';
@@ -38,7 +38,7 @@ class _FormConnectState extends State<ConnectDevice>
         "http://cavn.vn:8020/WebServiceSeateach.asmx",
         body: objBody,
         headers: {
-          'Content-Type': 'application/soap+xml; charset=utf-8',
+          'Content-Type': 'text/xml; charset=utf-8',
         });
 
     print('Response status: ${response.statusCode}');
